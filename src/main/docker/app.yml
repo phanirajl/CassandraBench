@@ -1,0 +1,23 @@
+version: '2'
+services:
+    cassandrabench-app:
+        image: cassandrabench
+        environment:
+            - _JAVA_OPTIONS=-Xmx512m -Xms256m
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATA_CASSANDRA_CONTACTPOINTS=cassandrabench-cassandra
+            - JHIPSTER_SLEEP=30 # gives time for the Cassandra cluster to start and execute the migration scripts
+    cassandrabench-cassandra:
+        extends:
+            file: cassandra-cluster.yml
+            service: cassandrabench-cassandra
+    cassandrabench-cassandra-node:
+        image: cassandra:3.9
+        environment:
+            - CASSANDRA_SEEDS=cassandrabench-cassandra
+    cassandrabench-cassandra-migration:
+        extends:
+            file: cassandra-migration.yml
+            service: cassandrabench-cassandra-migration
+        environment:
+            - CREATE_KEYSPACE_SCRIPT=create-keyspace-prod.cql
