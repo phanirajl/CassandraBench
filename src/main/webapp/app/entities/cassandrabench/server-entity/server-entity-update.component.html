@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-server-entity-heading">Create or edit a Server Entity</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!serverEntity.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="serverEntity.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_testName">Test Name</label>
+                    <input type="text" class="form-control" name="testName" id="field_testName"
+                        [(ngModel)]="serverEntity.testName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_testAddress">Test Address</label>
+                    <input type="text" class="form-control" name="testAddress" id="field_testAddress"
+                        [(ngModel)]="serverEntity.testAddress" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_testLastName">Test Last Name</label>
+                    <input type="text" class="form-control" name="testLastName" id="field_testLastName"
+                        [(ngModel)]="serverEntity.testLastName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_testCity">Test City</label>
+                    <input type="text" class="form-control" name="testCity" id="field_testCity"
+                        [(ngModel)]="serverEntity.testCity" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_testCountry">Test Country</label>
+                    <input type="text" class="form-control" name="testCountry" id="field_testCountry"
+                        [(ngModel)]="serverEntity.testCountry" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_testNumber">Test Number</label>
+                    <input type="number" class="form-control" name="testNumber" id="field_testNumber"
+                        [(ngModel)]="serverEntity.testNumber" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

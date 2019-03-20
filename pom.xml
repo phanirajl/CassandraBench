@@ -328,6 +328,11 @@
             <artifactId>spring-security-data</artifactId>
         </dependency>
         <!-- jhipster-needle-maven-add-dependency -->
+        <dependency>
+        	<groupId>com.github.javafaker</groupId>
+        	<artifactId>javafaker</artifactId>
+        	<version>0.17.2</version>
+        </dependency>
     </dependencies>
 
     <build>

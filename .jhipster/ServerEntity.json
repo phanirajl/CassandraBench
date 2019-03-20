@@ -1,0 +1,40 @@
+{
+    "name": "ServerEntity",
+    "fields": [
+        {
+            "fieldName": "testName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "testAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "testLastName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "testCity",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "testCountry",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "testNumber",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190320012045",
+    "entityTableName": "server_entity",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "cassandrabench",
+    "applications": "*",
+    "microserviceName": "cassandrabench"
+}

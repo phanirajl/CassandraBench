@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="serverEntity">
+            <h2><span>Server Entity</span> {{serverEntity.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Test Name</span></dt>
+                <dd>
+                    <span>{{serverEntity.testName}}</span>
+                </dd>
+                <dt><span>Test Address</span></dt>
+                <dd>
+                    <span>{{serverEntity.testAddress}}</span>
+                </dd>
+                <dt><span>Test Last Name</span></dt>
+                <dd>
+                    <span>{{serverEntity.testLastName}}</span>
+                </dd>
+                <dt><span>Test City</span></dt>
+                <dd>
+                    <span>{{serverEntity.testCity}}</span>
+                </dd>
+                <dt><span>Test Country</span></dt>
+                <dd>
+                    <span>{{serverEntity.testCountry}}</span>
+                </dd>
+                <dt><span>Test Number</span></dt>
+                <dd>
+                    <span>{{serverEntity.testNumber}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/server-entity', serverEntity.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
